@@ -1,0 +1,51 @@
+.back{
+  min-height: 100vh;
+  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 1240px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #20043c;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.abilities{
+  margin-top: 10px;
+  margin-right: 1260px;
+  padding: 10px;
+  border: 2px solid #20043c;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.hero-cards-container{
+  width: 70%;
+  margin-left: 290px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 10px;
+  border: 2px solid #20043c;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.sort-container{
+  width: 70%;
+  margin-left: 300px;
+  margin-top: -700px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid #20043c;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}

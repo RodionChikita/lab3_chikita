@@ -1,0 +1,87 @@
+<body>
+  <div class="back">
+<div class="container">
+  <h1 class="neon">Главная страничка</h1>
+</div>
+<div class="button">
+  <button class="glow-on-hover" mat-raised-button routerLink="/main">Главная страница</button>
+  <button class="glow-on-hover" mat-raised-button routerLink="/table">Таблица</button>
+</div>
+
+<form [formGroup]="heroForm" class="example-form">
+  <mat-card class="heroik">
+    <mat-card-title>Имя</mat-card-title>
+    <mat-form-field class="mat-50">
+      <mat-label>Имя</mat-label>
+      <input formControlName="name" matInput>
+    </mat-form-field>
+
+    <mat-card-title>Сила</mat-card-title>
+    <mat-form-field class="mat-50">
+      <mat-label>Сила</mat-label>
+      <input formControlName="strength" type="number" matInput>
+    </mat-form-field>
+
+    <mat-card-title>Способности</mat-card-title>
+    <mat-form-field class="example-full-width">
+      <mat-label></mat-label>
+      <select matNativeControl required formControlName="ability">
+        <option *ngFor="let ability of abilities" [value]="ability">{{ ability }}</option>
+      </select>
+    </mat-form-field>
+
+    <mat-card-title>Уровень</mat-card-title>
+    <mat-form-field class="mat-50">
+      <mat-label>Уровень</mat-label>
+      <input formControlName="level" type="number" matInput>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="save()">Создать героя</button>
+  </mat-card>
+</form>
+
+<mat-card class="abilities">
+  <mat-card-content>Добавление способностей</mat-card-content>
+  <mat-form-field class="example-full-width">
+    <mat-label>Способность</mat-label>
+    <input matInput [(ngModel)]="newAbility">
+  </mat-form-field>
+  <button mat-raised-button (click)="saveAbility()">Сохранить</button>
+</mat-card>
+<mat-card class="sort-container">
+  <mat-form-field>
+    <mat-label>Сортировка</mat-label>
+    <mat-select [(value)]="selectedSortOption" (selectionChange)="sortByLevel()">
+      <mat-option *ngFor="let option of sortOptions" [value]="option">{{ option }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="searchQuery" (input)="searchByName()" placeholder="Поиск по имени">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Способности</mat-label>
+    <mat-select (selectionChange)="filterByAbility($event)">
+      <mat-option *ngFor="let ability of abilities" [value]="ability">{{ ability }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" placeholder="От уровня" [(ngModel)]="minLevel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" placeholder="До уровня" [(ngModel)]="maxLevel">
+  </mat-form-field>
+
+  <button mat-raised-button (click)="filterByLevelRange()">Применить</button>
+</mat-card>
+
+<div class="hero-cards-container">
+  <div *ngFor="let hero of heroes">
+    <app-hero-card [hero]="hero"></app-hero-card>
+  </div>
+</div>
+</div>
+</body>
