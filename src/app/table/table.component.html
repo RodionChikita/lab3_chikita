@@ -1,8 +1,5 @@
 <body>
   <div class="back">
-<div class="container">
-  <h1 class="neon">Таблица</h1>
-  </div>
 <div class="button">
   <button class="glow-on-hover"  mat-raised-button routerLink="/main">На главную</button>
   <button class="glow-on-hover" mat-raised-button routerLink="/tabl">Таблица</button>
@@ -12,22 +9,22 @@
 
 <ng-container matColumnDef="name">
   <th mat-header-cell *matHeaderCellDef> Имя </th>
-  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
 </ng-container>
 
 <ng-container matColumnDef="level">
   <th mat-header-cell *matHeaderCellDef> Уровень </th>
-  <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+  <td mat-cell *matCellDef="let element"> {{ element.level }} </td>
 </ng-container>
 
 <ng-container matColumnDef="strength">
   <th mat-header-cell *matHeaderCellDef> Сила </th>
-  <td mat-cell *matCellDef="let element"> {{element.strength}} </td>
+  <td mat-cell *matCellDef="let element"> {{ element.strength }} </td>
 </ng-container>
 
 <ng-container matColumnDef="ability">
   <th mat-header-cell *matHeaderCellDef> Способность </th>
-  <td mat-cell *matCellDef="let element"> {{element.ability}} </td>
+  <td mat-cell *matCellDef="let element"> {{ element.ability }} </td>
 </ng-container>
 
 <ng-container matColumnDef="delete">
