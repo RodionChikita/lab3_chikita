@@ -76,6 +76,8 @@ maxLevel: number | null = null;
       this.heroService.getHeroes().subscribe(heroes => {
         this.heroes = heroes.filter(hero => hero.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
       });
+    } else {
+      this.loadHeroes()
     }
   }
 
